@@ -1,0 +1,28 @@
+import { ArrowRight, Play, Star, Clock3, UsersRound, Code2, BriefcaseBusiness, HeartPulse, Languages } from 'lucide-react';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import Button from '../components/Button.jsx';
+
+const courses = [
+  { icon: Code2, category: 'Teknologi', title: 'Dasar React untuk Pemula', teacher: 'Raka Pratama', duration: '3 jam 20 menit', rating: '4.9', color: 'course-lilac' },
+  { icon: BriefcaseBusiness, category: 'Bisnis', title: 'Bangun Bisnis Digital Pertamamu', teacher: 'Nadia Putri', duration: '2 jam 45 menit', rating: '4.8', color: 'course-peach' },
+  { icon: Languages, category: 'Bahasa', title: 'English Conversation Sehari-hari', teacher: 'Maya Chen', duration: '4 jam 10 menit', rating: '4.9', color: 'course-blue' },
+];
+const categories = [{ icon: Code2, label: 'Teknologi', number: '24 kelas' }, { icon: BriefcaseBusiness, label: 'Bisnis', number: '18 kelas' }, { icon: HeartPulse, label: 'Kesehatan', number: '12 kelas' }, { icon: Languages, label: 'Bahasa', number: '16 kelas' }];
+
+function CourseCard({ course }) {
+  const Icon = course.icon;
+  return <article className="course-card"><div className={`course-art ${course.color}`}><span className="course-art-icon"><Icon size={30}/></span><span className="course-play"><Play size={15} fill="currentColor"/></span></div><div className="course-content"><span className="course-category">{course.category}</span><h3>{course.title}</h3><p className="teacher">oleh {course.teacher}</p><div className="course-meta"><span><Clock3 size={15}/>{course.duration}</span><span><Star size={15} fill="currentColor"/>{course.rating}</span></div></div></article>;
+}
+
+export default function Home() {
+  return <><Header active="home"/><main>
+    <section className="hero"><div className="hero-inner"><div className="hero-copy"><span className="eyebrow"><span className="eyebrow-dot"/> VIDEO LEARNING PLATFORM</span><h1>Belajar hal baru,<br/><span>mulai dari sini.</span></h1><p>Temukan kelas video yang bikin kamu makin jago. Belajar fleksibel, sesuai waktu dan tujuanmu.</p><div className="hero-actions"><Button href="/register">Jelajahi kelas <ArrowRight size={17}/></Button><a className="watch-link" href="#kelas"><span><Play size={14} fill="currentColor"/></span>Lihat kelas pilihan</a></div><div className="hero-proof"><div className="avatar-stack"><i>H</i><i>A</i><i>M</i><i>+</i></div><p><strong>10.000+</strong> pelajar mulai berkembang</p></div></div>
+      <div className="hero-visual"><div className="visual-sun"/><div className="visual-card"><div className="visual-label">KELAS PILIHAN MINGGU INI</div><div className="visual-video"><div className="video-orbit orbit-one"/><div className="video-orbit orbit-two"/><div className="video-code"><span>const</span> future = <b>you</b>;</div><div className="video-play"><Play size={20} fill="currentColor"/></div></div><div className="visual-card-bottom"><div><strong>Belajar React dari Nol</strong><span>12 video · 3 jam</span></div><span className="visual-rating"><Star size={15} fill="currentColor"/> 4.9</span></div></div><div className="floating-note"><span className="note-icon"><Play size={13} fill="currentColor"/></span><span><b>Belajar fleksibel</b><small>Atur waktumu sendiri</small></span></div><div className="floating-sticker">#BelajarJadiSeru</div></div></div></section>
+    <section className="stats-strip"><div><strong>70+</strong><span>Kelas pilihan</span></div><div><strong>10k+</strong><span>Pelajar aktif</span></div><div><strong>4.9/5</strong><span>Rating rata-rata</span></div></section>
+    <section className="section category-section"><div className="section-heading"><div><span className="eyebrow">PILIH MINATMU</span><h2>Mulai dari yang kamu suka</h2></div><a className="text-link" href="#kelas">Lihat semua <ArrowRight size={16}/></a></div><div className="category-grid">{categories.map(({icon:Icon,label,number})=><a className="category-card" href="#kelas" key={label}><span className="category-icon"><Icon size={22}/></span><span><b>{label}</b><small>{number}</small></span><ArrowRight className="category-arrow" size={17}/></a>)}</div></section>
+    <section className="section courses-section" id="kelas"><div className="section-heading"><div><span className="eyebrow">DIPILIH UNTUK KAMU</span><h2>Kelas yang lagi populer</h2><p className="section-subtitle">Materi praktis dari pengajar yang paham bidangnya.</p></div><a className="text-link" href="/register">Jelajahi kelas <ArrowRight size={16}/></a></div><div className="course-grid">{courses.map(course=><CourseCard key={course.title} course={course}/>)}</div></section>
+    <section className="cta-band"><div><span className="eyebrow">LANGKAH KECIL, HASIL BESAR</span><h2>Skill baru bisa dimulai<br/>dari satu klik.</h2><p>Buat akun gratis dan temukan kelas pertamamu.</p></div><Button href="/register">Daftar gratis <ArrowRight size={17}/></Button></section>
+    <section className="section why-section"><div className="why-copy"><span className="eyebrow">BELAJAR DENGAN CARA KAMU</span><h2>Ilmu baru, tanpa bikin jadwalmu berantakan.</h2><p>VideoBelajar membantu kamu belajar dengan waktu yang lebih fleksibel. Pilih topik, putar kelasnya, dan lanjutkan kapan saja.</p><Button href="/register" variant="outline">Mulai belajar <ArrowRight size={17}/></Button></div><div className="benefit-list"><div><span>01</span><b>Belajar sesuai waktumu</b><p>Akses kelas kapan pun kamu siap.</p></div><div><span>02</span><b>Materi fokus dan praktis</b><p>Langsung ke hal yang bisa kamu terapkan.</p></div><div><span>03</span><b>Banyak topik, satu tempat</b><p>Teknologi, bisnis, bahasa, dan lainnya.</p></div></div></section>
+  </main><Footer/></>;
+}
