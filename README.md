@@ -1,46 +1,39 @@
-# VideoBelajar — React mission
+# VideoBelajar — React front-end revision
 
-Responsive static React website with three screens: homepage, registration, and login. Built from the assignment screenshots and the visible VideoBelajar mockup description. The Figma frame was not available to inspect, so compare the finished UI with the actual Figma before submission and adjust any mismatched details.
+This static React prototype follows the uploaded VideoBelajar Figma screenshots and style guide. It includes responsive desktop, tablet, and mobile layouts for the main flows:
 
-## Requirements
+- Home, course catalogue, course detail
+- Login and registration
+- Payment method, payment instructions, payment success/pending
+- My orders, My courses, profile
+- Lesson video, rules, quiz, quiz result, summary, course completion, certificate, and review modal
 
-- Node.js (current LTS)
-- VS Code
-- Git
+The prototype keeps interaction in the browser only. Login, registration, payment, profile saving, downloads, and class data are demonstrations and are not connected to a server or real payment provider.
 
 ## Run locally
 
-1. Extract this ZIP.
-2. Open the `videobelajar-react` folder in VS Code.
-3. Open Terminal → New Terminal.
-4. Run `npm install`.
-5. Run `npm run dev`.
-6. Open the localhost URL shown in the terminal, usually `http://localhost:5173`.
+1. Extract the ZIP and open the `videobelajar-react` folder in VS Code.
+2. Open Terminal → New Terminal.
+3. Run `npm install`, then `npm run dev`.
+4. Open the localhost URL shown in the terminal.
 
-Pages:
+## Main routes
 
-- Homepage: `/`
-- Register: `/register`
-- Login: `/login`
+- `/` Home
+- `/products` Course catalogue
+- `/course/ux` Course detail
+- `/login` and `/register`
+- `/checkout/method`, `/checkout/pay`, `/checkout/change`, `/checkout/success`, `/checkout/pending`
+- `/orders`, `/my-courses`, `/profile`
+- `/learn/video`, `/learn/rules`, `/learn/quiz`, `/learn/result`, `/learn/summary`
+- `/certificate`
 
-The forms are front-end demonstrations only. They show a confirmation message but do not create accounts or authenticate users because this assignment asks for a static website and no backend was provided.
+The Figma page could not be opened in the browser, so this revision is based on the screenshots uploaded in chat. Compare the local UI with the Figma file before submission, especially text or images that were too small to read in the screenshots.
 
-## Submit
+## Submission reminders
 
-1. Check all three screens against the Figma reference.
-2. Check the layout at desktop width and mobile width using Chrome DevTools device toolbar.
-3. Create a GitHub repository, then in the project terminal run:
-   - `git init`
-   - `git add .`
-   - `git commit -m "Build VideoBelajar React UI"`
-   - Create an empty repository on GitHub and follow its instructions to connect the remote and push.
-4. Optional: deploy the static site on Vercel or Netlify.
-5. If you do not deploy, capture desktop and mobile screenshots and add them to a PDF.
-6. Submit the GitHub repository link, deployment link or responsive screenshots, and the required form screenshot through Google Classroom.
-
-## Structure
-
-- `src/components`: reusable header, footer, brand, buttons, and auth form components
-- `src/pages`: homepage, registration, and login pages
-- `src/App.jsx`: simple path-based page selection
-- `src/styles.css`: responsive styling
+1. Compare Home, Login, and Register with the Figma frames first.
+2. Check each at desktop, tablet, and mobile widths in Chrome DevTools.
+3. Capture screenshots at the required viewports and include them as evidence if asked.
+4. Push the code to GitHub and deploy to Netlify/Vercel if required.
+5. Submit the repository and deployment links through Google Classroom.
