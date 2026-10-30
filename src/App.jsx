@@ -1,10 +1,2 @@
-import Home from './pages/Home.jsx';
-import Login from './pages/Login.jsx';
-import Register from './pages/Register.jsx';
-
-export default function App() {
-  const path = window.location.pathname.replace(/\/$/, '') || '/';
-  if (path === '/login') return <Login />;
-  if (path === '/register') return <Register />;
-  return <Home />;
-}
+import Home from './pages/Home.jsx';import Products from './pages/Products.jsx';import CourseDetail from './pages/CourseDetail.jsx';import Checkout from './pages/Checkout.jsx';import Auth from './pages/Auth.jsx';import Orders from './pages/Orders.jsx';import Profile from './pages/Profile.jsx';import Learning from './pages/Learning.jsx';import Certificate from './pages/Certificate.jsx';import './styles.css';
+export default function App(){const path=window.location.pathname.replace(/\/$/,'')||'/';if(path==='/login')return <Auth/>;if(path==='/register')return <Auth register/>;if(path==='/products')return <Products/>;if(path.startsWith('/course/'))return <CourseDetail/>;if(path==='/checkout/method')return <Checkout mode="method"/>;if(path==='/checkout/pay')return <Checkout mode="pay"/>;if(path==='/checkout/change')return <Checkout mode="change"/>;if(path==='/checkout/success')return <Checkout mode="success"/>;if(path==='/checkout/pending')return <Checkout mode="pending"/>;if(path==='/orders')return <Orders/>;if(path==='/my-courses')return <Orders classes/>;if(path==='/profile')return <Profile/>;if(path==='/learn/video')return <Learning initial="video"/>;if(path==='/learn/rules')return <Learning initial="rules"/>;if(path==='/learn/quiz')return <Learning initial="quiz"/>;if(path==='/learn/result')return <Learning initial="result"/>;if(path==='/learn/retry')return <Learning initial="retry"/>;if(path==='/learn/summary')return <Learning initial="summary"/>;if(path==='/certificate')return <Certificate/>;return <Home/>;}
